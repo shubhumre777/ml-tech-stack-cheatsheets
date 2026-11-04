@@ -121,8 +121,8 @@
 <text x="94" y="2186" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B">from pydantic import ConfigDict, ValidationError</text>
 <text x="94" y="2214" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B">model_config = ConfigDict(</text>
 <text x="94" y="2242" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B">    extra=&quot;forbid&quot;,            # reject unknown keys</text>
-<text x="94" y="2270" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B">    validate_assignment=True,  # validate later writes</text>
-<text x="94" y="2298" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B">    frozen=True,               # immutable model</text>
+<text x="94" y="2270" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B">    validate_assignment=True   # validate later writes</text>
+<text x="94" y="2298" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B"></text>
 <text x="94" y="2326" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B">)</text>
 <text x="94" y="2354" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B">User.model_json_schema()  # JSON Schema dict</text>
 <text x="94" y="2382" font-family="Consolas,Menlo,monospace" font-size="22" font-weight="500" fill="#10213B">try: user = User.model_validate(payload)</text>
