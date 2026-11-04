@@ -13,6 +13,8 @@ A practical, white-background reference for current Pydantic v2 workflows.
 - V1-to-V2 API replacements to avoid in new projects
 
 ## Files
+![Pydantic v2 cheat sheet (2026)](./pydantic-v2-cheatsheet-2026.svg)
+
 - [Open the scalable SVG cheat sheet](./pydantic-v2-cheatsheet-2026.svg)
 
 ## Official references
