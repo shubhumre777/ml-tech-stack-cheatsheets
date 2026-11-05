@@ -35,3 +35,14 @@ Covers:
 - [SQLAlchemy ORM](https://docs.sqlalchemy.org/en/20/orm/)
 
 Examples target current Pydantic v2 patterns. Confirm the installed versions and provider/framework support before using a specific integration option.
+
+
+## 3. All Pydantic v2 Decorators
+
+![Pydantic v2 decorators cheat sheet](./pydantic-v2-all-decorators-2026.svg)
+
+[Open the scalable all-decorators cheat sheet](./pydantic-v2-all-decorators-2026.svg)
+
+Covers the current Pydantic decorator set: `@field_validator`, `@model_validator`, `@field_serializer`, `@model_serializer`, `@computed_field`, `@validate_call`, and `pydantic.dataclasses.dataclass`. Also explains validator/serializer helpers for `Annotated` types and identifies deprecated v1 decorator names.
+
+Official references: [Validators](https://pydantic.dev/docs/validation/latest/concepts/validators/), [Functional Validators API](https://pydantic.dev/docs/validation/latest/api/pydantic/functional_validators/), [Functional Serializers API](https://pydantic.dev/docs/validation/latest/api/pydantic/functional_serializers/), [Computed Fields](https://pydantic.dev/docs/validation/latest/concepts/fields/#the-computed_field-decorator), [Validate Call](https://pydantic.dev/docs/validation/latest/concepts/validation_decorator/), [Pydantic Dataclasses](https://pydantic.dev/docs/validation/latest/concepts/dataclasses/), [Migration Guide](https://pydantic.dev/docs/validation/latest/get-started/migration/).
