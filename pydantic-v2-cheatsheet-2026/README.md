@@ -1,28 +1,37 @@
-# Pydantic v2 Cheat Sheet (2026)
+# Pydantic v2 Cheat Sheets (2026)
 
-A practical, white-background reference for current Pydantic v2 workflows.
+A practical, high-clarity reference collection for current Pydantic v2 usage.
 
-## Topics
-- BaseModel, Field, ConfigDict, typed constraints and reusable Annotated types
-- Input validation: model_validate, model_validate_json, model_validate_strings
-- field_validator and model_validator
-- Serialization: model_dump, model_dump_json, field_serializer, computed_field
-- TypeAdapter and validate_call
-- Nested models and discriminated unions
-- Environment configuration with the separate pydantic-settings package
-- V1-to-V2 API replacements to avoid in new projects
+## 1. Core Pydantic v2
+[Open the core cheat sheet](./pydantic-v2-cheatsheet-2026.svg)
 
-## Files
-![Pydantic v2 cheat sheet (2026)](./pydantic-v2-cheatsheet-2026.svg)
+## 2. Pydantic v2 Across Frameworks
+![Pydantic v2 integrations cheat sheet](./pydantic-v2-integrations-cheatsheet-2026.svg)
 
-- [Open the scalable SVG cheat sheet](./pydantic-v2-cheatsheet-2026.svg)
+[Open the scalable integration cheat sheet](./pydantic-v2-integrations-cheatsheet-2026.svg)
 
-## Official references
-- [Pydantic documentation](https://pydantic.dev/docs/validation/latest/)
-- [Models](https://pydantic.dev/docs/validation/latest/concepts/models/)
-- [Validators](https://pydantic.dev/docs/validation/latest/concepts/validators/)
-- [Serialization](https://pydantic.dev/docs/validation/latest/concepts/serialization/)
-- [Configuration](https://pydantic.dev/docs/validation/latest/concepts/config/)
-- [Pydantic Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/)
+Covers:
+- LangChain model structured output with `with_structured_output`
+- LangChain agents with `create_agent(response_format=...)`
+- LangChain tools with Pydantic `args_schema`
+- LangGraph `StateGraph` and the choice of state schema
+- FastAPI request bodies and filtered response models
+- SQLAlchemy 2.x ORM objects to Pydantic DTOs
+- MongoDB document aliases and serialization
+- Pandas / ETL row validation with `TypeAdapter`
 
-The cheat sheet focuses on Pydantic v2 APIs. Check your installed package version before relying on version-specific behavior.
+## Important framework distinctions
+- LangGraph supports Pydantic state schemas, but its documentation recommends `TypedDict` or dataclasses when performance is the priority. LangChain `create_agent` state schemas are TypedDict-based.
+- Use a Pydantic model for an agent's structured response via `response_format`; the parsed response is returned in `structured_response`.
+- Use separate request and response DTOs in APIs. Do not return credentials or private fields from an input schema.
+- Pydantic validation does not replace database constraints, transactions, authorization, or business logic.
+
+## Official documentation
+- [Pydantic models](https://pydantic.dev/docs/validation/latest/concepts/models/)
+- [Pydantic serialization](https://pydantic.dev/docs/validation/latest/concepts/serialization/)
+- [LangChain structured output](https://docs.langchain.com/oss/python/langchain/structured-output)
+- [LangGraph Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)
+- [FastAPI response models](https://fastapi.tiangolo.com/tutorial/response-model/)
+- [SQLAlchemy ORM](https://docs.sqlalchemy.org/en/20/orm/)
+
+Examples target current Pydantic v2 patterns. Confirm the installed versions and provider/framework support before using a specific integration option.
